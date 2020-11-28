@@ -22,10 +22,10 @@ while True:
         print("0")
         time.sleep(1)
     if(IO.input(14)==False): #object is near
-        IO.output(17, IO.LOW)
+        IO.output(17, IO.LOW) #im using Buzzer for this
         #temp1 = mlx.ambient_temperature
         temp2 = mlx.object_temperature
-        #print("Suhu Ruangan : {} C".format(round(temp1, 3)))
+        #print("room temperature : {} C".format(round(temp1, 3)))
         print(format(round(temp2, 3)))
         time.sleep(1)
 
