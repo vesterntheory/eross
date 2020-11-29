@@ -3,18 +3,18 @@ from tkinter.ttk import *
 from tkinter import *
 import Gabungan
 
-Temps = None
+temps = None
 
 def pool():
-    global Temps
+    global temps
     
     try:
-        val = round(Gabungan.Temps(), 2)
-        Temps.set(val)
+        val = str(round(Gabungan.temps(), 2))
+        temps.set(val)
     except:
         pass
     
-    root.after(500), pool()
+    root.after(500, pool)
 
 # Creating tkinter window with fixed geometry
     
@@ -23,9 +23,9 @@ Raja.geometry('550x300')
 Raja.title("New Thermal Devices")
 
 
-temps = DoubleVar()
+temps = StringVar()
 
-Suhu = Label(Raja, textvariable=Temps, font='Calibri')
+Suhu = Label(Raja, textvariable=temps, font='Calibri')
 Suhu.pack()
 
 Raja.bind("<i>", lambda event: Raja.attributes("-fullscreen", True))
